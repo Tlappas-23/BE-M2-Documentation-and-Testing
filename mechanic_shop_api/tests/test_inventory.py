@@ -1,5 +1,5 @@
 import unittest
-from app import create_app
+from application import create_app
 from application.models import db, Inventory
 from config import TestingConfig
 

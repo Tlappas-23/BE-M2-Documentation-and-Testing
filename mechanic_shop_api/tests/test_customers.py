@@ -1,5 +1,5 @@
 import unittest
-from app import create_app
+from application import create_app
 from application.models import db, Customer
 from application.auth import encode_token
 from werkzeug.security import generate_password_hash
