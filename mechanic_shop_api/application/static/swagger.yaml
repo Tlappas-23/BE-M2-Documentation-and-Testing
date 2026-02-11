@@ -3,7 +3,7 @@ info:
   title: "Mechanic Shop API"
   description: "This is an API to manage a Mechanic Shop - tracking customers, mechanics, service tickets, and inventory"
   version: "1.0.0"
-host: "YOUR-APP-NAME.onrender.com"
+host: "be-m2-documentation-and-testing.onrender.com"
 schemes:
   - "https"
 consumes:
