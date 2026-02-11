@@ -1,8 +1,10 @@
 import os
 
-from dotenv import load_dotenv
-
-load_dotenv()
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
@@ -18,6 +20,11 @@ class Config:
     JWT_EXPIRES_IN = int(os.getenv("JWT_EXPIRES_IN", "3600"))
     CACHE_TYPE = os.getenv("CACHE_TYPE", "SimpleCache")
     CACHE_DEFAULT_TIMEOUT = int(os.getenv("CACHE_DEFAULT_TIMEOUT", "300"))
+
+
+class ProductionConfig(Config):
+    SQLALCHEMY_DATABASE_URI = os.getenv("DATABASE_URL")
+    SECRET_KEY = os.getenv("SECRET_KEY")
 
 
 class TestingConfig(Config):
